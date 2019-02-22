@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="kaungmyatmin.com.notificationdemo.viewmodel.MainViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Notification Testing"
+            android:textColor="@android:color/holo_red_light"
+
+            />
+
+        <Button
+            android:id="@+id/noti_normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Normal"
+            android:layout_gravity="center"
+            />
+
+
+        <Button
+            android:id="@+id/noti_tap_enable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tap Enable with fresh start activity"
+            android:layout_gravity="center"
+            />
+        <Button
+            android:id="@+id/noti_tap_enable_back_stack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tap Enable with Back Stacked activity"
+            android:layout_gravity="center"
+            />
+
+        <Button
+            android:id="@+id/noti_action_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Action button"
+            android:layout_gravity="center"
+            />
+
+        <Button
+            android:id="@+id/noti_quick_reply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quick Reply"
+            android:layout_gravity="center"
+            />
+        <Button
+            android:id="@+id/noti_progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Progress Bar"
+            android:layout_gravity="center"
+            />
+
+
+
+    </LinearLayout>
+</layout>

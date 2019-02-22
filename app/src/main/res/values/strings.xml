@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Notification Demo</string>
+    <string name="channel_name">Normal Channel</string>
+    <string name="channel_description">This is normal channel.</string>
+    <string name="reply_label">This is reply label</string>
+</resources>
