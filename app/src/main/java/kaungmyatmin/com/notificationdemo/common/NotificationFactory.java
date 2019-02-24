@@ -6,9 +6,13 @@ import android.app.PendingIntent;
 
 import android.content.Intent;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.RemoteInput;
 
+
+import java.util.Date;
 
 import kaungmyatmin.com.notificationdemo.R;
 import kaungmyatmin.com.notificationdemo.broadcastReceiver.MyBroadCastReceiver;
@@ -70,6 +74,86 @@ public class NotificationFactory {
         NotificationCompat.Builder builder = getTypicalNotification(title, text);
         builder.addAction(getActionWithRemoteInput());
         return builder;
+    }
+
+    public NotificationCompat.Builder getNotiBuilderWithBigPicture(String title, String text) {
+        Bitmap bigPic = BitmapFactory.decodeResource(getActivity().getResources(), R.drawable.testing_pic);
+
+        return getTypicalNotification(title, text)
+                //show large icon on collapsed
+                .setLargeIcon(bigPic)
+                .setStyle(new NotificationCompat.BigPictureStyle()
+                        .bigPicture(bigPic)
+                        //show no large icon no expandable noti
+                        .bigLargeIcon(null));
+
+    }
+
+    public NotificationCompat.Builder getNotiBuilderWithBigText(String title, String text) {
+        return getTypicalNotification(title, text)
+                .setStyle(new NotificationCompat.BigTextStyle()
+                        .bigText("some big text.some big text.some big text.some big text.some big text.some big text.some big text.some big text.some big text.some big text.some big text.")
+                        .setBigContentTitle("This is big text title")
+                        .setSummaryText("this is summary"));
+
+    }
+
+    public NotificationCompat.Builder getNotiBuilderWithInboxStyle(String title, String text) {
+        return getTypicalNotification(title, text)
+                .setStyle(new NotificationCompat.InboxStyle()
+                        .setBigContentTitle("Big content title")
+                        .setSummaryText("summary text")
+                        .addLine("message 1: just some text to make the sentence longer.")
+                        .addLine("message 2: just some text to make the sentence longer.")
+                        .addLine("message 3: just some text to make the sentence longer.")
+                        .addLine("message 4: just some text to make the sentence longer.")
+                        .addLine("message 5: just some text to make the sentence longer.")
+                        .addLine("message 6: just some text to make the sentence longer.")
+                        .addLine("message 7: just some text to make the sentence longer.")
+                );
+    }
+
+    /*When using NotificationCompat.MessagingStyle, any values given to setContentTitle()
+     and setContentText() are ignored.*/
+    public NotificationCompat.Builder getNotiBuilderWithMessagingStyle() {
+        Long now = System.currentTimeMillis();
+        return getTypicalNotification("", "")
+                .setStyle(new NotificationCompat.MessagingStyle("user display name")
+                        .addMessage("Messaging text", now, "the man")
+                        .addMessage("Messaging text. some text to make the sentence longer.", now, "the girl")
+                        .setConversationTitle("Conservation Title")
+
+                );
+    }
+
+    public NotificationCompat.Builder getNotiBuilderWithMediaStyle() {
+        Bitmap albumArtBitmap = BitmapFactory.decodeResource(getActivity().getResources(), R.drawable.testing_pic);
+        return getTypicalNotification("Wonderful music", "My Awesome Band")
+                // Show controls on lock screen even when user hides sensitive content.
+                .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
+                .setLargeIcon(albumArtBitmap)
+                // Add media control buttons that invoke intents in your media service
+                //TODO provide required pendingintent
+                .addAction(R.drawable.ic_previous, "Previous", getPrevPendingIntent()) // #0
+                .addAction(R.drawable.ic_play_arrow, "Pause", getPausePendingIntent())  // #1
+                .addAction(R.drawable.ic_skip_next, "Next", getNextPendingIntent())     // #2
+                // Apply the media style template
+                .setStyle(new android.support.v4.media.app.NotificationCompat.MediaStyle()
+                                .setShowActionsInCompactView(1 /* #1: pause button */)
+                        //.setMediaSession(mediaSession.getSessionToken())
+                );
+    }
+
+    private PendingIntent getNextPendingIntent() {
+        return null;
+    }
+
+    private PendingIntent getPausePendingIntent() {
+        return null;
+    }
+
+    private PendingIntent getPrevPendingIntent() {
+        return null;
     }
 
     private NotificationCompat.Action getActionWithRemoteInput() {

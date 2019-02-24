@@ -84,16 +84,54 @@ public class MainActivity extends BaseActivity {
             }
         });
 
-        final DoSomeHeavyDutyAsync async = new DoSomeHeavyDutyAsync(getNotificationFactory().getTypicalNotification("Noti", "Just demo noti with progress bar")
-                , notificationManager);
+
         findViewById(R.id.noti_progress_bar).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                async.execute("");
-
+                new DoSomeHeavyDutyAsync(getNotificationFactory().getTypicalNotification("Noti", "Just demo noti with progress bar")
+                        , notificationManager).execute("");
 
             }
         });
 
+        findViewById(R.id.noti_big_icon).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NotificationCompat.Builder builder = getNotificationFactory().getNotiBuilderWithBigPicture("Noti", "Big Large Icon");
+                notificationManager.notify(1, builder.build());
+            }
+        });
+        findViewById(R.id.noti_big_text).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NotificationCompat.Builder builder = getNotificationFactory().getNotiBuilderWithBigText("Big text title on collapsed", "big text on collapsed. some text just for making two lines text.");
+                notificationManager.notify(1, builder.build());
+            }
+        });
+
+        findViewById(R.id.noti_inbox_style).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NotificationCompat.Builder builder = getNotificationFactory().getNotiBuilderWithInboxStyle("inbox style title collapsed", "inbox style text on collapsed. some text for longer");
+                notificationManager.notify(1, builder.build());
+            }
+        });
+
+        findViewById(R.id.noti_messaging_style).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NotificationCompat.Builder builder = getNotificationFactory().getNotiBuilderWithMessagingStyle();
+                notificationManager.notify(1, builder.build());
+            }
+        });
+
+
+        findViewById(R.id.noti_media_style).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NotificationCompat.Builder builder = getNotificationFactory().getNotiBuilderWithMediaStyle();
+                notificationManager.notify(1,builder.build());
+            }
+        });
     }
 }

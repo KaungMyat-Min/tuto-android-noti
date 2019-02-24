@@ -69,6 +69,48 @@
             android:layout_gravity="center"
             />
 
+        <Button
+            android:id="@+id/noti_big_icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Big Icon"
+            android:layout_gravity="center"
+            />
+
+        <Button
+            android:id="@+id/noti_big_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Big Text"
+            android:layout_gravity="center"
+            />
+
+        <Button
+            android:id="@+id/noti_inbox_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Inbox Style"
+            android:layout_gravity="center"
+            />
+
+        <Button
+            android:id="@+id/noti_messaging_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Messaging Style"
+            android:layout_gravity="center"
+            />
+
+        <Button
+            android:id="@+id/noti_media_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Media Control"
+            android:layout_gravity="center"
+            />
+
+
+
 
 
     </LinearLayout>

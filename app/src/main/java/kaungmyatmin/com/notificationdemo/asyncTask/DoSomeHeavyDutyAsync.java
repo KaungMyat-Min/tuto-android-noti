@@ -27,13 +27,13 @@ public class DoSomeHeavyDutyAsync extends BaseAsync<String, Integer, Integer> {
     @Override
     protected Integer doInBackground(String... params) {
         int i = 0;
-        for (i = 0; i < 100; i++) {
+        for (i = 0; i < 10; i++) {
             try {
-                Thread.sleep(100L);
+                Thread.sleep(500L);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            publishProgress(i);
+            publishProgress(i*10);
             if (isCancelled()) break;
         }
 
@@ -53,6 +53,5 @@ public class DoSomeHeavyDutyAsync extends BaseAsync<String, Integer, Integer> {
                 .setContentText("Progress finished, Progress bar should be gone now.");
         notificationManagerCompat.notify(1, builder.build());
 
-        Log.d(Constant.LOG_KEY, "progress finished");
     }
 }
