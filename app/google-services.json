@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "972415292283",
+    "firebase_url": "https://noti-test-10b87.firebaseio.com",
+    "project_id": "noti-test-10b87",
+    "storage_bucket": "noti-test-10b87.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:972415292283:android:3c7afc89ca6a280b6fe3de",
+        "android_client_info": {
+          "package_name": "kaungmyatmin.com.notificationdemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "972415292283-ird866b1ck4ovo3m12254ai9ob97kloc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kaungmyatmin.com.notificationdemo",
+            "certificate_hash": "6310ccb0fdbfb1eaf72f131a0f01864d0af8502e"
+          }
+        },
+        {
+          "client_id": "972415292283-8j88u9rf3ukmmblt02e5ca7f7vksmn57.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPdFUSitHESHzpCPQkZpGXF16VLaaQgkk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "972415292283-8j88u9rf3ukmmblt02e5ca7f7vksmn57.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
